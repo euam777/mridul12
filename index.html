@@ -1,80 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login Page</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: url() no-repeat center center fixed;
-      background-size: cover;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-    }
-
-    .login-box {
-      background: rgba(255, 255, 255, 0.9);
-      padding: 30px;
-      border-radius: 12px;
-      text-align: center;
-      width: 300px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
-
-    .login-box h1 {
-      margin-bottom: 20px;
-      color: #333;
-    }
-
-    .login-box input {
-      width: 90%;
-      padding: 10px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-
-    .login-box button {
-      background: #0072ff;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-
-    .login-box button:hover {
-      background: #0057b7;
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .login-container {
+            background: #fff;
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            width: 320px;
+            text-align: center;
+        }
+        .login-container h1 {
+            margin-bottom: 25px;
+            color: #333;
+        }
+        .login-container input {
+            width: 100%;
+            padding: 12px 15px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 12px;
+            background: #667eea;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .login-container button:hover {
+            background: #764ba2;
+        }
+        .footer {
+            margin-top: 20px;
+            color: #aaa;
+            font-size: 12px;
+        }
+    </style>
 </head>
 <body>
+    <div class="login-container">
+        <h1>Login to Continue</h1>
+        <form onsubmit="saveUserData(); return false;">
+            <input type="text" id="name" placeholder="Enter your name" required />
+            <input type="tel" id="mobile" placeholder="Enter your mobile number" required />
+            <button type="submit">Login</button>
+        </form>
+        <div class="footer">© 2025 Sarail Home Delivery Service</div>
+    </div>
 
-  <div class="login-box">
-    <h1>Login</h1>
-    <form action="videos.html" method="GET" onsubmit="return validateForm()">
-      <input type="text" id="name" name="name" placeholder="আপনার নাম লিখুন" required>
-      <input type="tel" id="number" name="number" placeholder="মোবাইল নাম্বার লিখুন" required>
-      <button type="submit">লগ ইন</button>
-    </form>
-  </div>
-
-  <script>
-    function validateForm() {
-      const name = document.getElementById('name').value;
-      const number = document.getElementById('number').value;
-      if (name.trim() === "" || number.trim() === "") {
-        alert("অনুগ্রহ করে আপনার নাম এবং মোবাইল নাম্বার দিন");
-        return false;
-      }
-      return true;
-    }
-  </script>
-
+    <script>
+        function saveUserData() {
+            const name = document.getElementById('name').value;
+            const mobile = document.getElementById('mobile').value;
+            localStorage.setItem('userName', name);
+            localStorage.setItem('userMobile', mobile);
+            window.location.href = 'videos.html';
+        }
+    </script>
 </body>
 </html>
