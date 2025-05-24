@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url() no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .login-box {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 12px;
+      text-align: center;
+      width: 300px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .login-box h1 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .login-box input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .login-box button {
+      background: #0072ff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .login-box button:hover {
+      background: #0057b7;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-box">
+    <h1>Login</h1>
+    <form action="videos.html" method="GET" onsubmit="return validateForm()">
+      <input type="text" id="name" name="name" placeholder="আপনার নাম লিখুন" required>
+      <input type="tel" id="number" name="number" placeholder="মোবাইল নাম্বার লিখুন" required>
+      <button type="submit">লগ ইন</button>
+    </form>
+  </div>
+
+  <script>
+    function validateForm() {
+      const name = document.getElementById('name').value;
+      const number = document.getElementById('number').value;
+      if (name.trim() === "" || number.trim() === "") {
+        alert("অনুগ্রহ করে আপনার নাম এবং মোবাইল নাম্বার দিন");
+        return false;
+      }
+      return true;
+    }
+  </script>
+
+</body>
+</html>
